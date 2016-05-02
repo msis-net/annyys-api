@@ -223,7 +223,7 @@ public class Item {
         //BodyMsg += "\r\n【FileMakerV11対応】\r\n";
         //BodyMsg += "http://www.annyys.net/JSP/Downloads/"+RandomName+".jsp\r\n";
         BodyMsg += "\r\n【FileMakerはV12以後対応】※可能な限り最新版をＤＬしてください。\r\n";
-        BodyMsg += "http://www1.annyys.net:18080/annyys_api/api/"+Param+"\r\n";
+        BodyMsg += "http://www1.annyys.net/annyys_api/api/"+Param+"\r\n";
         BodyMsg += "\r\n注意:このURLにはフォームに登録されたメールアドレス情報が含まれていますので転用・転載はお控えいただきますようお願い申し上げます。\r\n";
         BodyMsg += "\r\n";
         BodyMsg += "\r\n";

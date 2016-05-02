@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context path="/annyys-api">
+
+<Resource auth="Container"
+            driverClassName="com.mysql.jdbc.Driver"
+            maxActive="150" maxIdle="50" maxWait="15000"
+            name="jdbc/DBM"
+            testOnBorrow="true"
+            type="javax.sql.DataSource"
+            url="jdbc:mysql://annyys.net:3306/dbmanager"
+            username="annyys"
+            password="gsgdkkk"
+            validationQuery="SELECT 1"/>
+
+    <!--Realm className="org.apache.catalina.realm.JDBCRealm"
+         connectionName="annyys"
+         connectionPassword="gsgdkkk"
+         connectionURL="jdbc:mysql://annyys.net:3306/dbmanager"
+         driverName="com.mysql.jdbc.Driver"
+         roleNameCol="role"
+         userCredCol="passwd"
+         userNameCol="id"
+         userRoleTable="users"
+         userTable="users"/-->
+         <!--
+         重要メモ
+         rootのパスワードは[gsgdkkk]
+
+         -->
+ </Context>
+

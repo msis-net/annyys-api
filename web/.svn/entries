@@ -1,0 +1,35 @@
+10
+
+dir
+0
+https://192.168.1.123/svn/BaseTec/annyys_api/web
+https://192.168.1.123/svn/BaseTec
+add
+
+
+
+
+
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+cffd984a-c990-b64b-817f-871c8b66dce5
+
+js
+dir
+
+
+
+add
+

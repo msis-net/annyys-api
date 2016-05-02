@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, user-scalable=yes, maximum-scale=1.0, minimum-scale=1.0">
+<style>
+    .check{cursor: pointer;}
+</style>
+<title>DB管理</title>
+<!--[if lt IE 9]>
+<script src="js/html5.js"></script>
+<script src="js/css3-mediaqueries.js"></script>
+<![endif]-->
+<script src="js/jquery2.1.4.min.js"></script>
+<script src="js/pref.js"></script>
+<script type="text/javascript">
+var LOCATION=location.href;
+var HOST=location.host;
+var PATH=String(location.pathname).match(/^\u002f.*\u002f/);//\u002f:スラッシュ
+var APPNAME="api";
+var CONTEXT="";
+
+$(document).ready(function() {
+    $(".get").click(function (){
+        //alert(LOCATION+"\n"+HOST+"\n"+PATH);
+        var url="http://"+HOST+PATH+APPNAME+$(this).html();
+        //alert(url);
+        
+        var return_value;
+        $.ajax({
+            type:'get',
+            url:url,
+            async: false,
+            dataType:'text',
+            timeout:1000,
+            success: function(data){
+               return_value=data;
+            }
+        });
+        console.log(return_value);
+       alert(url+"\r\n"+return_value);
+       
+    });
+    
+    $(".post").click(function (){
+        //alert(LOCATION+"\n"+HOST+"\n"+PATH);
+        var url="http://"+HOST+PATH+APPNAME+$(this).html();
+        //alert(url);
+        var data=$(this).attr("val");
+        alert(url+"\r\ndata="+data);
+        
+        var return_value;
+        $.ajax({
+            type:'post',
+            url:url,
+            async: false,
+            data: data,
+            dataType:'text',
+            timeout:1000,
+            success: function(data){
+               return_value=data;
+            }
+        });
+        //console.log(return_value);
+        //alert(url+"\r\n"+return_value);
+       
+    });
+    
+});
+function setRestPost(url,type,data){
+    var return_value;
+    $.ajax({
+        url:url,
+        type:'post',
+        async: false,
+        data: data,
+        dataType:type,
+        timeout:1000,
+        success: function(data){
+           return_value=data;
+        }
+    });
+    return return_value;
+}
+
+</script>
+</head>
+
+<body>
+<header class="header">
+     <p>ここはヘッダーです</p>
+</header><!-- header class="header" -->
+ 
+<div class="wrapper">
+<div class="content">
+     GET:<div class="get">/test</div>
+     POST:<div class="post" val="post">/test</div>
+     <hr size="1">
+     GET:<div class="get">/item</div>
+     POST:<div class="post" val="item">/item</div>
+     <hr size="1">
+      GET:<div class="get">/item/table</div>
+     POST:<div class="post" val="item">/test</div>
+     <hr size="1">
+      GET:<div class="get">/request/download/abcde</div>
+     GET:<div class="get">/request/data</div>
+     <hr size="1">
+     
+</div><!-- div class="content" -->
+</div><!-- div class="wrapper" -->
+ 
+<div class="sidebar">
+     <p>ここはサイドバーです</p>
+</div><!-- div class="sidebar" -->
+ 
+<footer class="footer">
+    
+</footer><!-- footer class="footer" -->
+</body>
+</html>
